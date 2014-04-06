@@ -15,4 +15,9 @@ class ElefanteTeste < Test::Unit::TestCase
     mensagem = @elefantes.incomodam? 2
     assert_equal mensagem, "2 elefantes incomodam muita gente, 3 elefantes incomodam, incomodam, incomodam muito mais"
   end
+
+  def test_exibir_frase_3_elefantes
+    mensagem = @elefantes.incomodam? 3
+    assert_equal mensagem, "3 elefantes incomodam muita gente, 4 elefantes incomodam, incomodam, incomodam, incomodam muito mais"
+  end
 end
