@@ -3,13 +3,9 @@ class Elefante
     if number == 0 || number == nil
       "Quando não há elefantes ninguém fica incomodado :D"
     else
-      if number == 1
-        "1 elefante incomoda muita gente, 2 elefantes incomodam, incomodam muito mais"
-      elsif number == 2
-        "2 elefantes incomodam muita gente, 3 elefantes incomodam, incomodam, incomodam muito mais"
-      elsif number == 3
-        "3 elefantes incomodam muita gente, 4 elefantes incomodam, incomodam, incomodam, incomodam muito mais"
-      end
+      elefante_numero = number > 1 ? 'elefantes incomodam' : 'elefante incomoda'
+      incomodam_array = Array.new(number + 1) { 'incomodam' }.join(', ')
+      verso_completo = "#{number} #{elefante_numero} muita gente, #{number + 1} elefantes #{incomodam_array} muito mais"
     end
   end
 end

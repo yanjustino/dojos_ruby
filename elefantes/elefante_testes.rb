@@ -28,4 +28,11 @@ class ElefanteTeste < Test::Unit::TestCase
     mensagem = @elefantes.incomodam? 3
     assert_equal mensagem, "3 elefantes incomodam muita gente, 4 elefantes incomodam, incomodam, incomodam, incomodam muito mais"
   end
+
+  def test_exibir_verso_10_elefantes
+    mensagem = @elefantes.incomodam? 10
+    elefantes = Array.new(11) { 'incomodam' }.join(', ')
+    assert_equal mensagem, "10 elefantes incomodam muita gente, 11 elefantes #{elefantes} muito mais"
+  end
+
 end
