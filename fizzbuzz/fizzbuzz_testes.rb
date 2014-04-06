@@ -16,4 +16,9 @@ class FizzBuzzTest < Test::Unit::TestCase
     resultado = @fizzbuzz.contar(5)
     assert_equal resultado, 'Buzz'
   end
+
+  def test_fizzbuzz_para_numero_15
+    resultado = @fizzbuzz.contar(15)
+    assert_equal resultado, 'FizzBuzz'
+  end
 end
