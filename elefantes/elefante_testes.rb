@@ -20,4 +20,12 @@ class ElefanteTeste < Test::Unit::TestCase
     mensagem = @elefantes.incomodam? 3
     assert_equal mensagem, "3 elefantes incomodam muita gente, 4 elefantes incomodam, incomodam, incomodam, incomodam muito mais"
   end
+
+  def test_exibir_frase_0_or_nil_elefantes
+    mensagem_nil = @elefantes.incomodam? nil
+    mensagem_zero = @elefantes.incomodam? 0
+
+    assert_equal mensagem_nil, "Quando não há elefantes ninguém fica incomodado :D"
+    assert_equal mensagem_zero, "Quando não há elefantes ninguém fica incomodado :D"
+  end
 end
