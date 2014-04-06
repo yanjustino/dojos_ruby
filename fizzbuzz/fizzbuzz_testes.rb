@@ -13,6 +13,11 @@ class FizzBuzzTest < Test::Unit::TestCase
     assert_equal resultado, 'Fizz'
   end
 
+  def test_numero_nao_fizz_buzz
+    resultado = @fizzbuzz.processar_numero(4)
+    assert_equal resultado, '4'
+  end
+
   def test_buzz_para_numero_5
     resultado = @fizzbuzz.processar_numero(5)
     assert_equal resultado, 'Buzz'
