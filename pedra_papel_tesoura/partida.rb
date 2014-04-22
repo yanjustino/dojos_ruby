@@ -5,11 +5,27 @@ class Partida
                  ['pedra', 'tesoura']]
   end
 
-  def jogar(jogador1, jogador2)
-    [jogador1, jogador2].permutation do |partida|
-      return partida[0] if @vitorias.include? partida
-    end
+  def jogar (jogador1, jogador2)
+    @partida = [jogador1, jogador2]
 
-    'empate'
+    definir_vencedor || 'empate'
+  end
+
+  private
+
+  def definir_vencedor
+    jogadas.each { |jogada| return jogada.first if vencedor? jogada } unless empate?
+  end
+
+  def empate?
+    @partida.first == @partida.last
+  end
+
+  def jogadas
+    @partida.permutation
+  end
+
+  def vencedor? (jogada)
+    @vitorias.include? jogada
   end
 end
